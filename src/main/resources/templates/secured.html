@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CAS Secured Page</title>
+</head>
+<body>
+    <h1>CAS Authentication Successful</h1>
+    <p>Authenticated Username: <strong th:text="${username}"></strong></p>
+    
+    <a th:href="@{/logout}">Logout (Local and CAS Server)</a>
+</body>
+</html>

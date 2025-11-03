@@ -45,3 +45,4 @@ bin/
 # Spring Boot
 src/main/resources/application.properties
 src/main/resources/keystore.p12
+.DS_Store

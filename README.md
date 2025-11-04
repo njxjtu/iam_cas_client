@@ -33,6 +33,14 @@ server.ssl.key-alias=spring-boot-app
 keytool -genkeypair -alias spring-boot-app -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore keystore.p12 -validity 3650
 ```
 
+- Trust Development Cert of CAS Server
+
+```
+keytool -importcert -alias localcas -keystore "$JAVA_HOME/lib/security/cacerts" -file ~/cas-server.cer
+
+keytool -importcert -alias localcas -keystore "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/lib/security/cacerts" -file ~/Download/cas.example.org.pem
+```
+
 - Register service on Apereo CAS server
 
 ```

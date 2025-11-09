@@ -6,16 +6,20 @@ Spring boot application that serves as a CAS client.
 
 ```
 
+spring.application.name=casclient
+
 # --- Spring Boot Client Configuration ---
 server.port=8451
 
 # The base URL of your application (The CAS Client) is now HTTPS
-cas.client.serviceUrl=https://localhost:8451/login/cas 
+cas.client.serviceUrl=https://localhost:8451/login/cas
 
 # --- CAS Server Configuration (Assuming this remains the same) ---
 cas.server.urlPrefix=https://localhost:8443/cas
 cas.server.loginUrl=${cas.server.urlPrefix}/login
-cas.server.validationUrl=${cas.server.urlPrefix}/serviceValidate
+cas.server.validationUrl=${cas.server.urlPrefix}
+cas.client.hostUrl=https://localhost:8451
+cas.validation-type=CAS
 
 # --- HTTPS Configuration for Spring Boot ---
 # Note: You MUST provide a keystore file for this to work.
@@ -23,7 +27,6 @@ cas.server.validationUrl=${cas.server.urlPrefix}/serviceValidate
 server.ssl.key-store=classpath:keystore.p12
 server.ssl.key-store-password=changeit
 server.ssl.key-store-type=PKCS12
-server.ssl.key-alias=spring-boot-app
 
 ```
 

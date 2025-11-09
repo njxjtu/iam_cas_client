@@ -42,7 +42,6 @@ public class SecurityConfig {
         
         // 1. Configure the request authorization rules
     	http.authorizeHttpRequests(authorize -> authorize
-                // FIX: Use requestMatchers() instead of antMatchers()
                 .requestMatchers("/login/cas", "/logout").permitAll() 
                 .anyRequest().authenticated()
             )
